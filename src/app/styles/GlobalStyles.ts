@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./theme/theme";
 export default createGlobalStyle`
   *,html,body{
     margin: 0;
@@ -9,7 +8,7 @@ export default createGlobalStyle`
   
   }
   html,body{
-    background: ${theme.colors["bg-color"]};
-    color: ${theme.colors["text-color"]};
+    background: ${({ theme }) => theme.colors["bg-color"]};
+    color: ${({ theme }) => theme.colors["text-color"]};
   }
 `;

@@ -1,4 +1,4 @@
-export const theme = {
+export const blueTheme = {
  colors: {
   "bg-color": "#141e30",
   "inverted-bg-color": "#e8e8ea",
