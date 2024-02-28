@@ -4,27 +4,42 @@ import styled from "styled-components";
 interface MainLayoutProps {
  header: ReactNode;
  content: ReactNode;
- navbar: ReactNode;
+ sidebar: ReactNode;
  footer?: ReactNode;
 }
 
 export const MainLayout = ({
  header,
  content,
- navbar,
+ sidebar,
  footer,
 }: MainLayoutProps) => {
  return (
   <StyledMainLayout>
-   <>{header}</>
-   <div>
-    <>{content}</>
-    <>{navbar}</>
-   </div>
-   {footer ? <>{footer}</> : null}
+   <div className="header">{header}</div>
+   <div className="sidebar">{sidebar}</div>
+   <div className="content">{content}</div>
+   {footer ? <div className="footer">{footer}</div> : null}
   </StyledMainLayout>
  );
 };
 const StyledMainLayout = styled.div`
  display: grid;
+ grid-template-areas:
+  "header header header"
+  "sidebar content content"
+  "sidebar content content"
+  "footer footer footer";
+ .header {
+  grid-area: header;
+ }
+ .content {
+  grid-area: content;
+ }
+ .sidebar {
+  grid-area: sidebar;
+ }
+ .footer {
+  grid-area: footer;
+ }
 `;

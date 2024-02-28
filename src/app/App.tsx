@@ -1,13 +1,15 @@
+import { Header } from "@/widgets/Header";
 import { MainLayout } from "../shared/layouts/MainLayout";
+import { Sidebar } from "@/widgets/Sidebar";
 
 export const App = () => {
  return (
   <div>
    <MainLayout
-    header={<div>header</div>}
+    header={<Header />}
+    sidebar={<Sidebar />}
     content={<div>content</div>}
-    navbar={<div>navbar</div>}
-    footer={<div>footer</div>}
+    // footer={<div>footer</div>}
    />
   </div>
  );

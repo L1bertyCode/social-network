@@ -1,3 +1,5 @@
+import { theme } from "@/app/styles/theme/theme";
+import { variables } from "@/app/styles/variables";
 import styled from "styled-components";
 
 interface HeaderProps {}
@@ -7,5 +9,7 @@ export const Header = (props: HeaderProps) => {
 };
 const StyledHeader = styled.header`
  width: 100%;
- background-color: red;
+ height: ${variables.heights.headerHeight};
+ background-color: ${theme.colors["inverted-bg-color"]};
+ color: ${theme.colors["inverted-text-color"]};
 `;

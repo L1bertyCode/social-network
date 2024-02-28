@@ -31,6 +31,10 @@ module.exports = {
  },
  resolve: {
   extensions: [".tsx", ".ts", ".js"],
+  preferAbsolute: true,
+  alias: {
+   "@": path.resolve(__dirname, "src"),
+  },
  },
  devtool: "inline-source-map",
  devServer: {
