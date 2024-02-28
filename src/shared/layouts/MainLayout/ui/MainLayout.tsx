@@ -1,8 +1,9 @@
+import { variables } from "@/app/styles/variables";
 import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface MainLayoutProps {
- header: ReactNode;
+ header?: ReactNode;
  content: ReactNode;
  sidebar: ReactNode;
  footer?: ReactNode;
@@ -16,10 +17,12 @@ export const MainLayout = ({
 }: MainLayoutProps) => {
  return (
   <StyledMainLayout>
-   <div className="header">{header}</div>
+   <header className="header">{header}</header>
    <div className="sidebar">{sidebar}</div>
-   <div className="content">{content}</div>
-   {footer ? <div className="footer">{footer}</div> : null}
+   <main className="content">{content}</main>
+   {footer ? (
+    <footer className="footer">{footer}</footer>
+   ) : null}
   </StyledMainLayout>
  );
 };
@@ -32,6 +35,15 @@ const StyledMainLayout = styled.div`
   "footer footer footer";
  .header {
   grid-area: header;
+  width: 100%;
+  height: ${variables.heights.headerHeight};
+  background-color: ${({ theme }) =>
+   theme.colors["inverted-bg-color"]};
+  color: ${({ theme }) =>
+   theme.colors["inverted-text-color"]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
  }
  .content {
   grid-area: content;
