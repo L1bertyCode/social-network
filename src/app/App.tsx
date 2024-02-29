@@ -6,16 +6,8 @@ import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 
 import { Sidebar } from "@/widgets/Sidebar";
 import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-const AppRouter = () => {
- return (
-  <Routes>
-   <Route element={<MainPage />} path="/" />{" "}
-   <Route element={<AboutPage />} path="/about" />
-   <Route element={<NotFoundPage />} path="*" />
-  </Routes>
- );
-};
+
+import { AppRouter } from "./AppRouter";
 
 export const App = () => {
  return (

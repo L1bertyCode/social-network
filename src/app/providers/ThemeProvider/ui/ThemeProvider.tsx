@@ -15,13 +15,9 @@ export enum ETheme {
 export const StyledThemeProvider = ({
  children,
 }: StyledThemeProviderProps) => {
- const [theme, setTheme] = useState(lightTheme);
+ const [theme, setTheme] = useState(blueTheme);
  const styles = { ...theme, ...variables };
  return (
-  <ThemeProvider
-   theme={styles}
-  >
-   {children}
-  </ThemeProvider>
+  <ThemeProvider theme={styles}>{children}</ThemeProvider>
  );
 };

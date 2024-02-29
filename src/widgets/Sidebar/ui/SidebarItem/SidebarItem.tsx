@@ -1,4 +1,4 @@
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { AppNavLink } from "@/shared/ui/AppNavLink/AppNavLink";
 import { ReactNode } from "react";
 
 import styled from "styled-components";
@@ -16,4 +16,4 @@ export const SidebarItem = ({
   <SyledSidebarItem to={to}>{children}</SyledSidebarItem>
  );
 };
-const SyledSidebarItem = styled(AppLink)``;
+const SyledSidebarItem = styled(AppNavLink)``;

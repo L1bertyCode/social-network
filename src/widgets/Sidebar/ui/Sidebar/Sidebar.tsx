@@ -15,10 +15,7 @@ export const Sidebar = (props: SidebarProps) => {
 const StyledSidebar = styled.nav`
  width: 100%;
  height: calc(100vh - ${variables.heights.headerHeight});
- background-color: ${({ theme }) =>
-  theme.colors["inverted-bg-color"]};
- color: ${({ theme }) =>
-  theme.colors["inverted-text-color"]};
+
  display: flex;
  flex-direction: column;
  align-items: center;
