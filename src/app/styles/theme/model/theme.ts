@@ -1,4 +1,6 @@
-export interface ITheme {
+import { variables } from "../../variables";
+
+export interface ITheme extends IVariables {
  colors: {
   "bg-color": string;
   "inverted-bg-color": string;
@@ -11,5 +13,17 @@ export interface ITheme {
   "save-color": string;
   "icon-color": string;
   "accent-color": string;
+ };
+}
+export interface IVariables {
+ heights: {
+  headerHeight: string;
+ };
+ widths: {
+  "sidebar-width": string;
+  "sidebar-width-collapsed": string;
+ };
+ opacity: {
+  opacity70: number;
  };
 }

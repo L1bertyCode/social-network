@@ -4,11 +4,28 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
   
   }
-  html,body{
+  html,body,#root{
+    width: 100%;
     background: ${({ theme }) => theme.colors["bg-color"]};
     color: ${({ theme }) => theme.colors["text-color"]};
   }
+  input,
+button,
+textarea,
+select,
+a {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
 `;

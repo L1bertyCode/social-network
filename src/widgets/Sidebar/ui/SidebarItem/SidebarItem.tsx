@@ -1,5 +1,6 @@
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 interface SidebarItemProps {
@@ -15,6 +16,4 @@ export const SidebarItem = ({
   <SyledSidebarItem to={to}>{children}</SyledSidebarItem>
  );
 };
-const SyledSidebarItem = styled(Link)`
- width: fit-content;
-`;
+const SyledSidebarItem = styled(AppLink)``;

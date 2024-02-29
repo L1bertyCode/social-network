@@ -41,9 +41,6 @@ const StyledMainLayout = styled.div`
    theme.colors["inverted-bg-color"]};
   color: ${({ theme }) =>
    theme.colors["inverted-text-color"]};
-  display: flex;
-  align-items: center;
-  justify-content: center;
  }
  .content {
   grid-area: content;
