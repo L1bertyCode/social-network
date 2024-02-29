@@ -5,7 +5,7 @@ export const variables: IVariables = {
   headerHeight: "80px",
  },
  widths: {
-  "sidebar-width": "300px",
+  "sidebar-width": "200px",
   "sidebar-width-collapsed": "80px",
  },
  opacity: {

@@ -11,8 +11,6 @@ export const AppNavLink = ({
  children,
  ...otherProps
 }: AppNavLinkProps) => {
- console.log(" ...otherProps", { ...otherProps });
-
  return (
   <SyledAppNavLink {...otherProps} to={to}>
    {children}
@@ -20,10 +18,14 @@ export const AppNavLink = ({
  );
 };
 const SyledAppNavLink = styled(NavLink)<AppNavLinkProps>`
+ border-radius: 12px;
+ padding: 12px 16px;
+ width: 100%;
+ display: flex;
  &:hover {
-  opacity: ${({ theme }) => theme.opacity.opacity70};
+  background: ${({ theme }) => theme.colors["bg-color"]};
  }
  &.active {
-  color: ${({ theme }) => theme.colors["accent-color"]};
+  color: ${({ theme }) => theme.colors["save-color"]};
  }
 `;

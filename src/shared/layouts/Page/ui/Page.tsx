@@ -10,6 +10,7 @@ export const Page = ({ children }: PageProps) => {
  return <StyledPage>{children}</StyledPage>;
 };
 const StyledPage = styled.div`
- padding: 20px;
- height: calc(100vh - ${variables.heights.headerHeight});
+ height: calc(
+  100vh - ${variables.heights.headerHeight}
+ );
 `;

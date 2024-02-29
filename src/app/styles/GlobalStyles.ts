@@ -4,11 +4,11 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
   }
   html,body,#root{
     width: 100%;
-    background: ${({ theme }) => theme.colors["bg-color"]};
+    background: ${({ theme }) =>
+     theme.colors["dark-bg-color"]};
     color: ${({ theme }) => theme.colors["text-color"]};
   }
   input,

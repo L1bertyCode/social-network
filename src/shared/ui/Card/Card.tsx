@@ -6,9 +6,10 @@ interface CardProps {
 }
 
 export const Card = ({ children }: CardProps) => {
- return <StyledCard>Card</StyledCard>;
+ return <StyledCard>{children}</StyledCard>;
 };
 const StyledCard = styled.div`
  background-color: ${({ theme }) =>
-  theme.colors["dark-bg-color"]};
+  theme.colors["bg-color"]};
+ border-radius: 16px;
 `;

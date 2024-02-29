@@ -27,33 +27,23 @@ export const MainLayout = ({
  );
 };
 const StyledMainLayout = styled.div`
- max-width: 1600px;
- margin: 0 auto;
- display: grid;
- grid-template-columns: ${({ theme }) =>
-   theme.widths["sidebar-width"]} 1fr;
- gap: 20px;
- grid-template-areas:
-  "header header"
-  "sidebar content"
-  "sidebar content"
-  "footer footer";
+ width: 100%;
  header {
-  grid-area: header;
   width: 100%;
   height: ${variables.heights.headerHeight};
-  background-color: ${({ theme }) =>
-   theme.colors["light-bg-color"]};
-  border-radius: 20px;
-  padding: 12px 20px;
+  background: ${({ theme }) => theme.colors["bg-color"]};
+ }
+ main {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
  }
  .content {
-  grid-area: content;
+  flex-grow: 1;
  }
  .sidebar {
-  grid-area: sidebar;
+  width: ${({ theme }) => theme.widths["sidebar-width"]};
  }
  footer {
-  grid-area: footer;
  }
 `;
