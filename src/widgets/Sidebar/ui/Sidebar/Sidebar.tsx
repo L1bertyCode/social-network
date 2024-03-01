@@ -8,7 +8,8 @@ export const Sidebar = (props: SidebarProps) => {
  return (
   <StyledSidebar>
    <SidebarItem to="/">MainPage</SidebarItem>
-   <SidebarItem to="/about">AboutPage</SidebarItem>
+   <SidebarItem to="/about">AboutPage</SidebarItem>{" "}
+   <SidebarItem to="/profile">ProfilePage</SidebarItem>
   </StyledSidebar>
  );
 };

@@ -1,6 +1,6 @@
 import { Page } from "@/shared/layouts/Page";
-// @ts-ignore
 import bg from "@/shared/assets/img/bg.jpg";
+
 import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";
 import { CoverImage } from "@/widgets/CoverImage";
@@ -11,23 +11,25 @@ interface MainPageProps {
 
 const MainPage = ({}: MainPageProps) => {
  return (
-  <StyledMainPage>
-   <CoverImage className="cImg" src={bg} alt="bg" />
-   <StyledCard className={"header"}>info</StyledCard>
-   <div className={"content"}>
-    <StyledCard>info</StyledCard>
-    <StyledCard>form</StyledCard>
-    <StyledCard>posts</StyledCard>
-   </div>
-   <StyledCard className="friends">friends</StyledCard>
-  </StyledMainPage>
+  <Page>
+   <StyledMainPage>
+    <CoverImage className="cImg" src={bg} alt="bg" />
+    <StyledCard className={"header"}>info</StyledCard>
+    <div className={"content"}>
+     <StyledCard>info</StyledCard>
+     <StyledCard>form</StyledCard>
+     <StyledCard>posts</StyledCard>
+    </div>
+    <StyledCard className="friends">friends</StyledCard>
+   </StyledMainPage>
+  </Page>
  );
 };
 export default MainPage;
 
 const StyledCard = styled(Card)``;
 
-const StyledMainPage = styled(Page)`
+const StyledMainPage = styled("div")`
  display: grid;
  grid-template-columns: repeat(3, 1fr);
  grid-template-areas:
