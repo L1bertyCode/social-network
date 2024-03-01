@@ -19,5 +19,5 @@ const StyledSidebar = styled.nav`
  display: flex;
  flex-direction: column;
  align-items: center;
- /* width: ${variables.widths["sidebar-width"]}; */
+ padding: 12px;
 `;

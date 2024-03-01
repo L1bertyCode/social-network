@@ -3,10 +3,19 @@ import styled from "styled-components";
 
 interface CardProps {
  children?: ReactNode;
+ className?: string;
 }
 
-export const Card = ({ children }: CardProps) => {
- return <StyledCard>{children}</StyledCard>;
+export const Card = ({
+ children,
+ className,
+ ...otherProps
+}: CardProps) => {
+ return (
+  <StyledCard {...otherProps} className={className}>
+   {children}
+  </StyledCard>
+ );
 };
 const StyledCard = styled.div`
  background-color: ${({ theme }) =>
