@@ -4,6 +4,7 @@ import bg from "@/shared/assets/img/bg.jpg";
 import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";
 import { CoverImage } from "@/widgets/CoverImage";
+import { Profile } from "@/app/entities/Profile";
 
 interface MainPageProps {
  className?: string;
@@ -14,7 +15,9 @@ const MainPage = ({}: MainPageProps) => {
   <Page>
    <StyledMainPage>
     <CoverImage className="cImg" src={bg} alt="bg" />
-    <StyledCard className={"header"}>info</StyledCard>
+    <StyledCard className={"header"}>
+     <Profile />
+    </StyledCard>
     <div className={"content"}>
      <StyledCard>info</StyledCard>
      <StyledCard>form</StyledCard>

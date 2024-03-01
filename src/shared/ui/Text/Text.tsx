@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-type ColorType = "primary" | "accent" | "notAccent";
+type TextColorType = "primary" | "accent" | "notAccent";
 
 interface TextProps {
  children?: string;
- colorType?: ColorType;
+ colorType?: TextColorType;
 }
 
 export const Text = ({ children }: TextProps) => {

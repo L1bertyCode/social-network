@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-type ColorType = "primary" | "accent" | "notAccent";
+type TitleColorType = "primary" | "accent" | "notAccent";
 
 interface TitleProps {
  children?: string;
- colorType?: ColorType;
+ colorType?: TitleColorType;
 }
 
 export const Title = ({ children }: TitleProps) => {
