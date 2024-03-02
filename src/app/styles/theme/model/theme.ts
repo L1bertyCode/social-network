@@ -4,15 +4,15 @@ export interface ITheme extends IVariables {
  colors: {
   "bg-color": string;
   "inverted-bg-color": string;
-  "dark-bg-color": string;
-  "light-bg-color": string;
+  "bg-color-dark": string;
+  "bg-color-light": string;
   "text-color": string;
-  "inverted-text-color": string;
-  "hint-color": string;
-  "cancel-color": string;
-  "save-color": string;
-  "icon-color": string;
-  "accent-color": string;
+  "text-color-inverted": string;
+  "color-hint": string;
+  "color-cancel": string;
+  "color-save": string;
+  "color-icon": string;
+  "color-accent": string;
  };
 }
 export interface IVariables {
@@ -20,10 +20,23 @@ export interface IVariables {
   headerHeight: string;
  };
  widths: {
-  "sidebar-width": string;
-  "sidebar-width-collapsed": string;
+  sidebarWidth: string;
+  sidebarWidthCollapsed: string;
  };
  opacity: {
   opacity70: number;
+ };
+ borderRadius: {
+  r8: string;
+  r12: string;
+  r16: string;
+  r20: string;
+  r24: string;
+ };
+ indents: {
+  indent8: string;
+  indent12: string;
+  indent16: string;
+  indent20: string;
  };
 }

@@ -8,6 +8,7 @@ import { Sidebar } from "@/widgets/Sidebar";
 import { Suspense } from "react";
 
 import { AppRouter } from "./AppRouter";
+import { Page } from "@/shared/layouts/Page";
 
 export const App = () => {
  return (
@@ -16,7 +17,7 @@ export const App = () => {
     header={<Navbar />}
     sidebar={<Sidebar />}
     content={
-     <Suspense fallback={<div>Loading...</div>}>
+     <Suspense fallback={<Page>Loading...</Page>}>
       <AppRouter />
      </Suspense>
     }

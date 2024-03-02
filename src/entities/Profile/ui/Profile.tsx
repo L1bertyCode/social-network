@@ -10,7 +10,7 @@ export const Profile = (props: ProfileProps) => {
    <div>
     <span>Lib</span>
     <span>Code</span>
-    <Button>Edit</Button>
+    <Button variant="filled">Edit</Button>
    </div>
   </Card>
  );

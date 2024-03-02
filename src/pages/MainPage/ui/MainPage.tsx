@@ -4,7 +4,7 @@ import bg from "@/shared/assets/img/bg.jpg";
 import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";
 import { CoverImage } from "@/widgets/CoverImage";
-import { Profile } from "@/app/entities/Profile";
+import { Profile } from "@/entities/Profile";
 
 interface MainPageProps {
  className?: string;

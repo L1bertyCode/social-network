@@ -23,16 +23,34 @@ export const Button = (props: ButtonProps) => {
 };
 
 const StyledButton = styled.button<ButtonProps>`
+ cursor: pointer;
+ outline: none;
+
  ${(props) => {
   switch (props.variant) {
    case "filled":
     return css`
-     outline: none;
+     padding: ${({ theme }) => theme.indents.indent8}
+      ${({ theme }) => theme.indents.indent20};
+     background: ${({ theme }) =>
+      theme.colors["color-hint"]};
+     border: 1px solid transparent;
+     border-radius: ${({ theme }) => theme.borderRadius.r8};
+     opacity: 0.9;
+     &:hover {
+      opacity: 1;
+     }
+    `;
+   case "outlined":
+    return css`
+     padding: 12px 20px;
      background: none;
+     border: 1px solid
+      ${({ theme }) => theme.colors["color-hint"]};
     `;
    default:
     return css`
-     outline: none;
+     border: none;
      background: none;
     `;
   }

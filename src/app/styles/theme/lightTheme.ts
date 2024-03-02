@@ -1,17 +1,18 @@
-
-
 export const lightTheme = {
  colors: {
-  "bg-color": "#eff5f6",
+  "bg-color": "#fff",
   "inverted-bg-color": "#141e30",
-  "dark-bg-color": "#fff",
-  "light-bg-color": "#e2eef1",
+  "bg-color-dark": "#EDEEF0",
+  "bg-color-light": "#F0F2F5",
+  
   "text-color": "#0c1214",
-  "inverted-text-color": "#eff5f6",
-  "hint-color": "#adbcc0",
-  "cancel-color": "#f77",
-  "save-color": "#62de85",
-  "icon-color": "#5ed3f3",
-  "accent-color": "#00c8ff",
+  "text-color-inverted": "#818CA6",
+
+  "color-accent": "#3784CB",
+  "color-hint": "#EBF2FA",
+
+  "color-cancel": "#f77",
+  "color-save": "#62de85",
+  "color-icon": "#5ed3f3",
  },
 };

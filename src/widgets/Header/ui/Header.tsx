@@ -12,5 +12,5 @@ const StyledHeader = styled.header`
  background-color: ${({ theme }) =>
   theme.colors["inverted-bg-color"]};
  color: ${({ theme }) =>
-  theme.colors["inverted-text-color"]};
+  theme.colors["text-color-inverted"]};
 `;

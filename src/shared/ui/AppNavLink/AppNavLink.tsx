@@ -26,6 +26,6 @@ const SyledAppNavLink = styled(NavLink)<AppNavLinkProps>`
   background: ${({ theme }) => theme.colors["bg-color"]};
  }
  &.active {
-  color: ${({ theme }) => theme.colors["save-color"]};
+  color: ${({ theme }) => theme.colors["color-accent"]};
  }
 `;

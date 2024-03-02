@@ -8,7 +8,7 @@ export default createGlobalStyle`
   html,body,#root{
     width: 100%;
     background: ${({ theme }) =>
-     theme.colors["dark-bg-color"]};
+     theme.colors["bg-color-dark"]};
     color: ${({ theme }) => theme.colors["text-color"]};
   }
   input,
