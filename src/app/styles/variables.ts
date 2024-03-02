@@ -23,5 +23,6 @@ export const variables: IVariables = {
   indent12: "12px",
   indent16: "16px",
   indent20: "20px",
+  indent24: "24px",
  },
 };

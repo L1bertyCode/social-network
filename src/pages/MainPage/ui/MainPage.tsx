@@ -5,6 +5,8 @@ import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";
 import { CoverImage } from "@/widgets/CoverImage";
 import { Profile } from "@/entities/Profile";
+import { PostList } from "@/entities/Post";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface MainPageProps {
  className?: string;
@@ -15,13 +17,14 @@ const MainPage = ({}: MainPageProps) => {
   <Page>
    <StyledMainPage>
     <CoverImage className="cImg" src={bg} alt="bg" />
-    <StyledCard className={"header"}>
-     <Profile />
-    </StyledCard>
+    <Profile className={"header"} />
     <div className={"content"}>
      <StyledCard>info</StyledCard>
      <StyledCard>form</StyledCard>
-     <StyledCard>posts</StyledCard>
+     <StyledCard>
+      <Text>All posts</Text>
+      <PostList />
+     </StyledCard>
     </div>
     <StyledCard className="friends">friends</StyledCard>
    </StyledMainPage>

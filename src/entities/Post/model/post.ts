@@ -1,4 +1,6 @@
 export interface PostSchema {
- test: string;
- user: string;
+ text: string;
+ username: string;
+ sirname: string;
+ avatar?: string;
 }

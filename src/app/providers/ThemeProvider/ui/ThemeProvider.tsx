@@ -30,9 +30,9 @@ const changeTheme = (theme: ETheme) => {
 export const StyledThemeProvider = ({
  children,
 }: StyledThemeProviderProps) => {
- const [theme, setTheme] = useState<ETheme>(ETheme.DARK);
+ const [theme, setTheme] = useState(darkTheme);
 
- const styles = { ...darkTheme, ...variables };
+ const styles = { ...theme, ...variables };
  return (
   <ThemeProvider theme={styles}>{children}</ThemeProvider>
  );

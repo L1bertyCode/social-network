@@ -1,5 +1,3 @@
-import { variables } from "../../variables";
-
 export interface ITheme extends IVariables {
  colors: {
   "bg-color": string;
@@ -38,5 +36,6 @@ export interface IVariables {
   indent12: string;
   indent16: string;
   indent20: string;
+  indent24: string;
  };
 }

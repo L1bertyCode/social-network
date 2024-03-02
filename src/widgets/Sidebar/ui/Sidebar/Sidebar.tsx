@@ -11,7 +11,6 @@ export const Sidebar = (props: SidebarProps) => {
    <SidebarItem to="/">MainPage</SidebarItem>
    <SidebarItem to="/about">AboutPage</SidebarItem>{" "}
    <SidebarItem to="/profile">ProfilePage</SidebarItem>
-   <Button onClick={() => {}}>change theme</Button>
   </StyledSidebar>
  );
 };

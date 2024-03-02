@@ -7,6 +7,7 @@ interface MainLayoutProps {
  content: ReactNode;
  sidebar: ReactNode;
  footer?: ReactNode;
+ className?: string;
 }
 
 export const MainLayout = ({
@@ -14,9 +15,10 @@ export const MainLayout = ({
  content,
  sidebar,
  footer,
+ className,
 }: MainLayoutProps) => {
  return (
-  <StyledMainLayout>
+  <StyledMainLayout className={className}>
    <header>{header}</header>
    <main>
     <div className="sidebar">{sidebar}</div>
@@ -37,6 +39,12 @@ const StyledMainLayout = styled.div`
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
+  @media (max-width: 1600px) {
+   max-width: 1400px;
+  }
+  @media (max-width: 1400px) {
+   max-width: 1200px;
+  }
  }
  .content {
   flex-grow: 1;
