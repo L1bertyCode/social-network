@@ -1,18 +1,3 @@
-export interface ITheme extends IVariables {
- colors: {
-  "bg-color": string;
-  "inverted-bg-color": string;
-  "bg-color-dark": string;
-  "bg-color-light": string;
-  "text-color": string;
-  "text-color-inverted": string;
-  "color-hint": string;
-  "color-cancel": string;
-  "color-save": string;
-  "color-icon": string;
-  "color-accent": string;
- };
-}
 export interface IVariables {
  heights: {
   headerHeight: string;
@@ -37,5 +22,20 @@ export interface IVariables {
   indent16: string;
   indent20: string;
   indent24: string;
+ };
+}
+export interface ITheme extends IVariables {
+ colors: {
+  "bg-color": string;
+  "bg-color-inverted": string;
+  "bg-color-dark": string;
+  "bg-color-light": string;
+  "text-color": string;
+  "text-color-inverted": string;
+  "color-hint": string;
+  "color-cancel": string;
+  "color-save": string;
+  "color-icon": string;
+  "color-accent": string;
  };
 }

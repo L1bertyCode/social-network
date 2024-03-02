@@ -42,6 +42,7 @@ const DivImg = styled.div`
 const PostHeader = styled.div`
  display: flex;
  align-items: center;
+ margin-bottom: ${({ theme }) => theme.indents.indent8};
 `;
 const PostName = styled.div`
  margin-left: ${({ theme }) => theme.indents.indent8};

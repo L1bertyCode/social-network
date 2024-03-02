@@ -1,10 +1,10 @@
 export const lightTheme = {
  colors: {
   "bg-color": "#fff",
-  "inverted-bg-color": "#141e30",
+  "bg-color-inverted": "#141e30",
   "bg-color-dark": "#EDEEF0",
   "bg-color-light": "#F0F2F5",
-  
+
   "text-color": "#0c1214",
   "text-color-inverted": "#818CA6",
 

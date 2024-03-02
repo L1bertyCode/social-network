@@ -10,7 +10,8 @@ export const Sidebar = (props: SidebarProps) => {
   <StyledSidebar>
    <SidebarItem to="/">MainPage</SidebarItem>
    <SidebarItem to="/about">AboutPage</SidebarItem>{" "}
-   <SidebarItem to="/profile">ProfilePage</SidebarItem>
+   <SidebarItem to="/profile">ProfilePage</SidebarItem>{" "}
+   <SidebarItem to="/dialogs">DialogsPage</SidebarItem>
   </StyledSidebar>
  );
 };

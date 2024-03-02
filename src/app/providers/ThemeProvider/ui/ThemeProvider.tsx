@@ -32,7 +32,7 @@ export const StyledThemeProvider = ({
 }: StyledThemeProviderProps) => {
  const [theme, setTheme] = useState(darkTheme);
 
- const styles = { ...theme, ...variables };
+ const styles: ITheme = { ...theme, ...variables };
  return (
   <ThemeProvider theme={styles}>{children}</ThemeProvider>
  );

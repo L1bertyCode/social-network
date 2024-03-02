@@ -1,10 +1,10 @@
 export const darkTheme = {
  colors: {
   "bg-color": "#222222",
-  "inverted-bg-color": "#e8e8ea",
+  "bg-color-inverted": "#e8e8ea",
   "bg-color-dark": "#121212",
   "bg-color-light": "#333333",
-  
+
   "text-color": "#dbdbdb",
   "text-color-inverted": "#0c1214",
 

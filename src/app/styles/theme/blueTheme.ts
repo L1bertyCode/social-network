@@ -1,7 +1,7 @@
 export const blueTheme = {
  colors: {
   "bg-color": "#141e30",
-  "inverted-bg-color": "#e8e8ea",
+  "bg-color-inverted": "#e8e8ea",
   "bg-color-dark": "#090d15",
   "bg-color-light": "#1e2d48",
   "text-color": "#dbdbdb",

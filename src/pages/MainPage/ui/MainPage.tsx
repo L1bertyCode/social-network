@@ -7,6 +7,7 @@ import { CoverImage } from "@/widgets/CoverImage";
 import { Profile } from "@/entities/Profile";
 import { PostList } from "@/entities/Post";
 import { Text } from "@/shared/ui/Text/Text";
+import { Input } from "@/shared/ui/Input/Input";
 
 interface MainPageProps {
  className?: string;
@@ -20,7 +21,10 @@ const MainPage = ({}: MainPageProps) => {
     <Profile className={"header"} />
     <div className={"content"}>
      <StyledCard>info</StyledCard>
-     <StyledCard>form</StyledCard>
+     <StyledCard>
+      form
+      <Input placeholder={"What's news?"} />
+     </StyledCard>
      <StyledCard>
       <Text>All posts</Text>
       <PostList />
