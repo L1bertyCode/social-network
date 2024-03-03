@@ -37,4 +37,6 @@ const PostHeader = styled.div`
 const PostName = styled.div`
  margin-left: ${({ theme }) => theme.indents.indent8};
 `;
-const StyledPost = styled.div``;
+const StyledPost = styled.div`
+ margin-top: 12px;
+`;

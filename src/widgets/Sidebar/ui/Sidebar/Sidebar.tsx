@@ -33,6 +33,7 @@ const ChangeTheme = styled(Button)`
 const StyledSidebar = styled.nav`
  width: 100%;
  height: calc(100vh - ${variables.heights.headerHeight});
+ padding: ${({ theme }) => theme.indents.indent12};
 `;
 const StyledSidebarNav = styled.nav`
  display: flex;

@@ -14,5 +14,10 @@ export const routesConfig: ExtendsRouteProps[] = [
  { element: <AboutPage />, path: "/about", icon: "" },
  { element: <ProfilePage />, path: "/profile", icon: "" },
  { element: <DialogsPage />, path: "/dialogs", icon: "" },
+ {
+  element: <DialogsPage />,
+  path: "/dialogs/:id",
+  icon: "",
+ },
  { element: <NotFoundPage />, path: "*", icon: "" },
 ];

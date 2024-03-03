@@ -4,4 +4,5 @@ export interface PostSchema {
  username: string;
  sirname: string;
  avatar?: string;
+ likes?: number;
 }

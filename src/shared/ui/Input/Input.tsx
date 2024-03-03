@@ -1,8 +1,14 @@
-import { InputHTMLAttributes } from "react";
+import {
+ ChangeEvent,
+ InputHTMLAttributes,
+ useState,
+} from "react";
 import styled from "styled-components";
+import { Button } from "../Button/Button";
 
 interface InputProps
  extends InputHTMLAttributes<HTMLInputElement> {
+ className?: string;
  type?: string;
  placeholder?: string;
 }
@@ -10,16 +16,45 @@ interface InputProps
 export const Input = ({
  type = "text",
  placeholder,
+ className,
 }: InputProps) => {
+ const [value, setValue] = useState("");
  return (
-  <StyledInput placeholder={placeholder} type={type} />
+  <InputWrapper>
+   <StyledInput
+    value={value}
+    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+     setValue(e.target.value)
+    }
+    className={className}
+    placeholder={placeholder}
+    type={type}
+   />
+   {value && (
+    <InputButton onClick={() => setValue("")}>
+     x
+    </InputButton>
+   )}
+  </InputWrapper>
  );
 };
+const InputWrapper = styled.div`
+ position: relative;
+ width: 100%;
+`;
+const InputButton = styled(Button)`
+ position: absolute;
+ right: 4px;
+ top: 50%;
+ transform: translateY(-50%);
+ padding: 8px;
+`;
 const StyledInput = styled.input`
+ width: 100%;
  outline: none;
  border: none;
  background: ${({ theme }) =>
   theme.colors["bg-color-light"]};
- padding: ${({ theme }) => theme.indents.indent8};
+ padding: 8px 30px 8px 8px;
  border-radius: ${({ theme }) => theme.indents.indent8};
 `;

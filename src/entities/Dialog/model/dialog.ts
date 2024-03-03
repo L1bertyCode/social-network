@@ -1,1 +1,4 @@
-export interface DialogSchema {}
+export interface DialogSchema {
+ id: string;
+ name: string;
+}

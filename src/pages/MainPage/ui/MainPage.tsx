@@ -6,7 +6,8 @@ import { CoverImage } from "@/widgets/CoverImage";
 import { Profile } from "@/entities/Profile";
 import { PostList } from "@/entities/Post";
 import { Text } from "@/shared/ui/Text/Text";
-import { Input } from "@/shared/ui/Input/Input";
+
+import { AddPost } from "@/feature/addPost";
 
 interface MainPageProps {
  className?: string;
@@ -18,10 +19,9 @@ const MainPage = ({}: MainPageProps) => {
    <StyledMainPage>
     <Profile className={"header"} />
     <div className={"content"}>
-     <StyledCard>info</StyledCard>
+     {/* <StyledCard>info</StyledCard> */}
      <StyledCard>
-      form
-      <Input placeholder={"What's news?"} />
+      <AddPost />
      </StyledCard>
      <StyledCard>
       <Text>All posts</Text>
@@ -51,6 +51,9 @@ const StyledMainPage = styled("div")`
  .content {
   grid-area: c;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.indents.indent12};
  }
  .friends {
   grid-area: f;

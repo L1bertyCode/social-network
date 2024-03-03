@@ -1,5 +1,7 @@
+import { Card } from "@/shared/ui/Card/Card";
+
 interface MessageListProps {}
 
-const MessageList = (props: MessageListProps) => {
- return <div>MessageList</div>;
+export const MessageList = (props: MessageListProps) => {
+ return <Card>MessageList</Card>;
 };
