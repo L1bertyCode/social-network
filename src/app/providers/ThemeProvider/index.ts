@@ -1,6 +1,6 @@
 export {
  ETheme,
  ThemeContext,
- ThemeProvider,
+ StyledThemeProvider,
  LOCAL_STORAGE_THEME_KEY,
 } from "./ui/ThemeProvider";

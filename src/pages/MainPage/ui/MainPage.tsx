@@ -1,5 +1,4 @@
 import { Page } from "@/shared/layouts/Page";
-import bg from "@/shared/assets/img/bg.jpg";
 
 import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";
@@ -17,7 +16,6 @@ const MainPage = ({}: MainPageProps) => {
  return (
   <Page>
    <StyledMainPage>
-    <CoverImage className="cImg" src={bg} alt="bg" />
     <Profile className={"header"} />
     <div className={"content"}>
      <StyledCard>info</StyledCard>
@@ -43,13 +41,10 @@ const StyledMainPage = styled("div")`
  display: grid;
  grid-template-columns: repeat(3, 1fr);
  grid-template-areas:
-  "i i i"
   "h h h"
   "c c f";
  gap: 12px;
- .cImg {
-  grid-area: i;
- }
+
  .header {
   grid-area: h;
  }

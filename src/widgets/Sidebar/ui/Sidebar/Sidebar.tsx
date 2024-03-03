@@ -17,15 +17,19 @@ export const Sidebar = (props: SidebarProps) => {
     <SidebarItem to="/profile">ProfilePage</SidebarItem>{" "}
     <SidebarItem to="/dialogs">DialogsPage</SidebarItem>
    </StyledSidebarNav>
-   <Button
+   <ChangeTheme
     variant="outlined"
     onClick={() => setTheme(theme)}
    >
-    Change theme
-   </Button>
+    Theme
+   </ChangeTheme>
   </StyledSidebar>
  );
 };
+const ChangeTheme = styled(Button)`
+ position: absolute;
+ bottom: 50%;
+`;
 const StyledSidebar = styled.nav`
  width: 100%;
  height: calc(100vh - ${variables.heights.headerHeight});

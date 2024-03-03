@@ -2,6 +2,7 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Text } from "@/shared/ui/Text/Text";
 import styled from "styled-components";
 import { PostSchema } from "../../model/post";
+import { AvatarDiv } from "@/shared/ui/Avatar/AvatarDiv";
 
 interface PostProps {
  post?: PostSchema;
@@ -15,10 +16,10 @@ export const Post = ({ post }: PostProps) => {
     {post.avatar ? (
      <Avatar src={post.avatar} />
     ) : (
-     <DivImg>
-      {post.username.substring(0, 1)}
-      {post.sirname.substring(0, 1)}
-     </DivImg>
+     <AvatarDiv
+      username={post?.username}
+      sirname={post?.sirname}
+     />
     )}
     <PostName>
      {post.username} {post.sirname}
@@ -28,17 +29,6 @@ export const Post = ({ post }: PostProps) => {
   </StyledPost>
  );
 };
-const DivImg = styled.div`
- content: "";
- background: ${({ theme }) => theme.colors["color-accent"]};
- width: 50px;
- height: 50px;
- border-radius: 50%;
- display: flex;
- align-items: center;
- justify-content: center;
- font-size: 24px;
-`;
 const PostHeader = styled.div`
  display: flex;
  align-items: center;
