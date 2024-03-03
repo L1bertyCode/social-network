@@ -4,6 +4,7 @@ import { Post } from "../Post/Post";
 type Props = {};
 const list: PostSchema[] = [
  {
+  id: "1",
   username: "Liberty",
   sirname: "Code",
   avatar: "",
@@ -15,7 +16,7 @@ export const PostList = (props: Props) => {
  return (
   <div>
    {list.map((item) => (
-    <Post post={item} />
+    <Post post={item} key={item.id} />
    ))}
   </div>
  );

@@ -35,7 +35,7 @@ const StyledButton = styled.button<ButtonProps>`
      background: ${({ theme }) =>
       theme.colors["color-hint"]};
      border: 1px solid transparent;
-     border-radius: ${({ theme }) => theme.borderRadius.r8};
+     border-radius: ${({ theme }) => theme.borderRadius.r12};
      opacity: 0.9;
      &:hover {
       opacity: 1;
@@ -44,9 +44,9 @@ const StyledButton = styled.button<ButtonProps>`
    case "outlined":
     return css`
      padding: 12px 20px;
+     border-radius: ${({ theme }) => theme.borderRadius.r8};
      background: none;
-     border: 1px solid
-      ${({ theme }) => theme.colors["color-hint"]};
+     border: 1px solid red;
     `;
    default:
     return css`

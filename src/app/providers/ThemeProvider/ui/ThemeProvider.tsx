@@ -1,39 +1,57 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 import { blueTheme } from "@/app/styles/theme/blueTheme";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { lightTheme } from "@/app/styles/theme/lightTheme";
 import { variables } from "@/app/styles/variables";
 import { darkTheme } from "@/app/styles/theme/darkTheme";
 import { ITheme } from "@/app/styles/theme/model/theme";
 
-interface StyledThemeProviderProps {
+// Context
+interface ThemeContextProps {
+ theme?: ETheme;
+ setTheme?: (theme: ETheme) => void;
+}
+export const ThemeContext =
+ createContext<ThemeContextProps>({});
+
+// Provider
+interface ThemeProviderProps {
  children: ReactNode;
 }
 export enum ETheme {
  LIGHT = "lightTheme",
- //  BLUE = "blueTheme",
  DARK = "darkTheme",
+ //  BLUE = "blueTheme",
 }
-const changeTheme = (theme: ETheme) => {
- let newTheme;
- switch (theme) {
-  case ETheme.DARK:
-   newTheme = ETheme.LIGHT;
-  case ETheme.LIGHT:
-   newTheme = ETheme.DARK;
-  default:
-   newTheme = ETheme.DARK;
-   break;
- }
+const mapTheme = {
+ lightTheme: lightTheme,
+ darkTheme: darkTheme,
 };
-export const StyledThemeProvider = ({
- children,
-}: StyledThemeProviderProps) => {
- const [theme, setTheme] = useState(darkTheme);
+export const LOCAL_STORAGE_THEME_KEY = "theme";
+const defaultTheme =
+ (localStorage.getItem(
+  LOCAL_STORAGE_THEME_KEY
+ ) as ETheme) || ETheme.DARK;
+console.log(
+ "defaultTheme",
+ localStorage.getItem(LOCAL_STORAGE_THEME_KEY)
+);
 
- const styles: ITheme = { ...theme, ...variables };
+export const ThemeProvider = ({
+ children,
+}: ThemeProviderProps) => {
+ const [theme, setTheme] = useState(defaultTheme);
+
+ const styles: ITheme = {
+  ...mapTheme[theme],
+  ...variables,
+ };
  return (
-  <ThemeProvider theme={styles}>{children}</ThemeProvider>
+  <StyledThemeProvider theme={styles}>
+   <ThemeContext.Provider value={{ theme, setTheme }}>
+    {children}
+   </ThemeContext.Provider>
+  </StyledThemeProvider>
  );
 };
