@@ -18,15 +18,23 @@ const DialogsPage = (props: DialogsPageProps) => {
   <Page>
    <StyledDialogsPage>
     <DialogList dialogList={list} />
+    <VerticalLine />
     <MessageList />
    </StyledDialogsPage>
   </Page>
  );
 };
 const StyledDialogsPage = styled(Card)`
-height: 100%;
+ height: 100%;
  display: grid;
- grid-template-columns: 2fr 10fr;
+ grid-template-columns: 2fr 0.1fr 10fr;
  gap: ${({ theme }) => theme.indents.indent12};
+`;
+const VerticalLine = styled.div`
+ height: 100%;
+ width: 1px;
+ opacity: ${({ theme }) => theme.opacity.opacity70};
+ background: ${({ theme }) =>
+  theme.colors["bg-color-inverted"]};
 `;
 export default DialogsPage;

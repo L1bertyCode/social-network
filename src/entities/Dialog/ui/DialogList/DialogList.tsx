@@ -17,4 +17,8 @@ export const DialogList = ({
   </StyledDialogList>
  );
 };
-const StyledDialogList = styled(Card)``;
+const StyledDialogList = styled.div`
+ display: flex;
+ flex-direction: column;
+
+`;

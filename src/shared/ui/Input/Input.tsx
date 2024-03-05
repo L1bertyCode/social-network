@@ -6,8 +6,14 @@ import {
 import styled from "styled-components";
 import { Button } from "../Button/Button";
 
-interface InputProps
- extends InputHTMLAttributes<HTMLInputElement> {
+type ExtendsInputType = Omit<
+ InputHTMLAttributes<HTMLInputElement>,
+ "value" | "onChange"
+>;
+
+interface InputProps extends ExtendsInputType {
+ value?: string;
+ onChange?: (value: string) => void;
  className?: string;
  type?: string;
  placeholder?: string;
@@ -17,21 +23,22 @@ export const Input = ({
  type = "text",
  placeholder,
  className,
+ value,
+ onChange,
 }: InputProps) => {
- const [value, setValue] = useState("");
  return (
   <InputWrapper>
    <StyledInput
     value={value}
     onChange={(e: ChangeEvent<HTMLInputElement>) =>
-     setValue(e.target.value)
+     onChange?.(e.target.value)
     }
     className={className}
     placeholder={placeholder}
     type={type}
    />
    {value && (
-    <InputButton onClick={() => setValue("")}>
+    <InputButton onClick={() => onChange?.("")}>
      x
     </InputButton>
    )}

@@ -1,7 +1,7 @@
-import { PostSchema } from "../../model/post";
+import { PostSchema } from "../../model/types/post";
 import { Post } from "../Post/Post";
 
-type Props = {};
+interface PostListProps {}
 const list: PostSchema[] = [
  {
   id: "1",
@@ -29,7 +29,7 @@ const list: PostSchema[] = [
  },
 ];
 
-export const PostList = (props: Props) => {
+export const PostList = (props: PostListProps) => {
  return (
   <div>
    {list.map((item) => (

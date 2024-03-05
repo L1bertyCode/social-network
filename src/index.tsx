@@ -3,6 +3,7 @@ import { App } from "@/app/App";
 import { StyledThemeProvider } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
 import GlobalStyles from "@/app/styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
+import { StoreProvider } from "./app/providers/StoreProvider";
 
 const container = document.getElementById("root");
 if (!container) {
@@ -14,9 +15,11 @@ if (!container) {
 const root = createRoot(container);
 root.render(
  <BrowserRouter>
-  <StyledThemeProvider>
-   <App />
-   <GlobalStyles />
-  </StyledThemeProvider>
+  <StoreProvider>
+   <StyledThemeProvider>
+    <App />
+    <GlobalStyles />
+   </StyledThemeProvider>
+  </StoreProvider>
  </BrowserRouter>
 );

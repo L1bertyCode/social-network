@@ -1,7 +1,7 @@
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Text } from "@/shared/ui/Text/Text";
 import styled from "styled-components";
-import { PostSchema } from "../../model/post";
+import { PostSchema } from "../../model/types/post";
 import { AvatarDiv } from "@/shared/ui/Avatar/AvatarDiv";
 
 interface PostProps {
