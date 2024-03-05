@@ -1,6 +1,7 @@
 export interface ProfileSchema {
- name: string;
+ firstname: string;
  sirname: string;
- city: string;
- website: string;
+ city?: string;
+ website?: string;
+ avatar?: string;
 }

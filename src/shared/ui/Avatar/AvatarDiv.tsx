@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 interface AvatarDivProps {
  className?: string;
- username?: string;
+ firstname?: string;
  sirname?: string;
  size?: string;
 }
 
 export const AvatarDiv = ({
  className,
- username,
+ firstname,
  sirname,
  size = "50px",
  ...otherProps
@@ -24,7 +24,7 @@ export const AvatarDiv = ({
    }}
    className={className}
   >
-   {username?.substring(0, 1)}
+   {firstname?.substring(0, 1)}
    {sirname?.substring(0, 1)}
   </DivImg>
  );

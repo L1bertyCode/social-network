@@ -17,12 +17,12 @@ export const Post = ({ post }: PostProps) => {
      <Avatar src={post.avatar} />
     ) : (
      <AvatarDiv
-      username={post?.username}
+      firstname={post?.firstname}
       sirname={post?.sirname}
      />
     )}
     <PostName>
-     {post.username} {post.sirname}
+     {post.firstname} {post.sirname}
     </PostName>
    </PostHeader>
    <Text>{post.text}</Text>

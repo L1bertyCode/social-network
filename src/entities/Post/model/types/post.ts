@@ -1,7 +1,7 @@
 export interface PostSchema {
  id: string;
  text: string;
- username: string;
+ firstname: string;
  sirname: string;
  avatar?: string;
  likes?: number;

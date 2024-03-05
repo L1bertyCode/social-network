@@ -1,3 +1,5 @@
+export { getPostList } from "./model/selectors/getPostList";
+
 export {
  addPostReducer,
  addPostActions,

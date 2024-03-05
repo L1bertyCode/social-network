@@ -1,5 +1,7 @@
+import { ProfileSchema } from "@/entities/Profile";
 import { AddPostSchema } from "@/feature/addPost";
 
 export interface StateSchema {
-  addPost:AddPostSchema
+ profile: ProfileSchema;
+ addPost: AddPostSchema;
 }

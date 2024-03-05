@@ -1,5 +1,5 @@
 export interface MessageSchema {
  text: string;
- username: string;
+ firstname: string;
  sirname: string;
 }

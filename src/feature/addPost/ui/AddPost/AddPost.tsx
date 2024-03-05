@@ -1,24 +1,30 @@
+import { useAppDispatch } from "@/app/providers/StoreProvider/config/store";
 import { PostSchema } from "@/entities/Post";
 import { Button } from "@/shared/ui/Button/Button";
 import { Input } from "@/shared/ui/Input/Input";
 import { useState } from "react";
 import styled from "styled-components";
+import { addPostActions } from "../../model/slice/addPostSlice";
 
 interface AddPostProps {}
 
 export const AddPost = (props: AddPostProps) => {
- // const dispatch=use
+ const dispatch = useAppDispatch();
  const [value, setValue] = useState<string>("");
  const onChangeInput = (value: string) => setValue(value);
  const createNewPost = () => {
   const newPost: PostSchema = {
    id: String(new Date()),
-   username: "Lib",
+   firstname: "Lib",
    sirname: "Code",
    avatar: "",
    text: value,
    likes: 0,
   };
+  if (value) {
+   dispatch(addPostActions.setValue(newPost));
+  }
+  setValue("");
  };
  return (
   <StyledAddPost>

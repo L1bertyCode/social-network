@@ -7,7 +7,7 @@ const initialState: AddPostSchema = {
  postsList: [
   {
    id: "1",
-   username: "Liberty",
+   firstname: "Liberty",
    sirname: "Code",
    avatar: "",
    text: "text",
@@ -15,7 +15,7 @@ const initialState: AddPostSchema = {
   },
   {
    id: "2",
-   username: "Liberty",
+   firstname: "Liberty",
    sirname: "Code",
    avatar: "",
    text: "text text",
@@ -23,7 +23,7 @@ const initialState: AddPostSchema = {
   },
   {
    id: "3",
-   username: "Liberty",
+   firstname: "Liberty",
    sirname: "Code",
    avatar: "",
    text: "text 100",
@@ -44,6 +44,3 @@ export const addPostSlice = createSlice({
 
 export const { actions: addPostActions } = addPostSlice;
 export const { reducer: addPostReducer } = addPostSlice;
-
-// export const selectCount = (state: RootState) =>
-//  state.counter.value;

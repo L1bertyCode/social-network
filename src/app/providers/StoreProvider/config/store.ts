@@ -1,3 +1,4 @@
+import { profileReducer } from "@/entities/Profile";
 import { addPostReducer } from "@/feature/addPost/model/slice/addPostSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import {
@@ -7,7 +8,10 @@ import {
 } from "react-redux";
 
 export const store = configureStore({
- reducer: { addPost: addPostReducer },
+ reducer: {
+  addPost: addPostReducer,
+  profile: profileReducer,
+ },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
