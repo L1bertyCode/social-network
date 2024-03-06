@@ -10,8 +10,8 @@ interface AddPostProps {}
 
 export const AddPost = (props: AddPostProps) => {
  const dispatch = useAppDispatch();
- const [value, setValue] = useState<string>("");
- const onChangeInput = (value: string) => setValue(value);
+ const [value, setPost] = useState<string>("");
+ const onChangeInput = (value: string) => setPost(value);
  const createNewPost = () => {
   const newPost: PostSchema = {
    id: String(new Date()),
@@ -22,9 +22,9 @@ export const AddPost = (props: AddPostProps) => {
    likes: 0,
   };
   if (value) {
-   dispatch(addPostActions.setValue(newPost));
+   dispatch(addPostActions.setPost(newPost));
   }
-  setValue("");
+  setPost("");
  };
  return (
   <StyledAddPost>

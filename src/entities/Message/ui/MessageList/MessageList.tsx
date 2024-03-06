@@ -12,9 +12,11 @@ export const MessageList = (props: MessageListProps) => {
  const messagesList = useSelector(getMessagesList);
  return (
   <StyledMessageList>
-   {messagesList.map((messageItem) => (
-    <Message message={messageItem} />
-   ))}
+   <div>
+    {messagesList.map((messageItem) => (
+     <Message key={messageItem.id} message={messageItem} />
+    ))}
+   </div>
    <StyledAddMessage />
   </StyledMessageList>
  );

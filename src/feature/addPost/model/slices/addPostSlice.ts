@@ -36,7 +36,7 @@ export const addPostSlice = createSlice({
  name: "addPost",
  initialState,
  reducers: {
-  setValue: (state, action: PayloadAction<PostSchema>) => {
+  setPost: (state, action: PayloadAction<PostSchema>) => {
    state.postsList = [...state.postsList, action.payload];
   },
  },
