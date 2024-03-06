@@ -3,6 +3,7 @@ import {
  DialogSchema,
 } from "@/entities/Dialog";
 import { MessageList } from "@/entities/Message";
+
 import { Page } from "@/shared/layouts/Page";
 import { Card } from "@/shared/ui/Card/Card";
 import styled from "styled-components";

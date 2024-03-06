@@ -4,7 +4,7 @@ import { Button } from "@/shared/ui/Button/Button";
 import { Input } from "@/shared/ui/Input/Input";
 import { useState } from "react";
 import styled from "styled-components";
-import { addPostActions } from "../../model/slice/addPostSlice";
+import { addPostActions } from "../../model/slices/addPostSlice";
 
 interface AddPostProps {}
 
@@ -28,14 +28,14 @@ export const AddPost = (props: AddPostProps) => {
  };
  return (
   <StyledAddPost>
-   <StyledInput
+   <Input
     value={value}
     onChange={onChangeInput}
     placeholder={"What's news?"}
    />
-   <StyledButton onClick={createNewPost} variant="filled">
+   <Button onClick={createNewPost} variant="filled">
     Add
-   </StyledButton>
+   </Button>
   </StyledAddPost>
  );
 };
@@ -45,6 +45,6 @@ const StyledAddPost = styled.div`
  align-items: center;
  gap: 12px;
 `;
-const StyledButton = styled(Button)``;
+// const StyledButton = styled(Button)``;
 
-const StyledInput = styled(Input)``;
+// const StyledInput = styled(Input)``;

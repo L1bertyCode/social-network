@@ -1,7 +1,27 @@
-import { Card } from "@/shared/ui/Card/Card";
+import {
+ AddMessage,
+ getMessagesList,
+} from "@/feature/addMessage";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import { Message } from "../Message/Message";
 
 interface MessageListProps {}
 
 export const MessageList = (props: MessageListProps) => {
- return <div>MessageList</div>;
+ const messagesList = useSelector(getMessagesList);
+ return (
+  <StyledMessageList>
+   {messagesList.map((messageItem) => (
+    <Message message={messageItem} />
+   ))}
+   <StyledAddMessage />
+  </StyledMessageList>
+ );
 };
+const StyledMessageList = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+`;
+const StyledAddMessage = styled(AddMessage)``;
