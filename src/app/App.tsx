@@ -9,10 +9,12 @@ import { Suspense } from "react";
 
 import { AppRouter } from "./AppRouter";
 import { Page } from "@/shared/layouts/Page";
+import { Modal } from "@/shared/ui/Modal/Modal";
 
 export const App = () => {
  return (
   <div>
+   <Modal />
    <MainLayout
     header={<Navbar />}
     sidebar={<Sidebar />}

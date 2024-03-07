@@ -1,16 +1,25 @@
 import { variables } from "@/app/styles/variables";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
-interface HeaderProps {}
+interface HeaderProps {
+ children?: ReactNode;
+}
 
-export const Header = (props: HeaderProps) => {
- return <StyledHeader>Header</StyledHeader>;
+export const Header = ({ children }: HeaderProps) => {
+ return <StyledHeader>{children}</StyledHeader>;
 };
 const StyledHeader = styled.header`
+ max-width: 1600px;
  width: 100%;
- height: ${variables.heights.headerHeight};
- background-color: ${({ theme }) =>
-  theme.colors["bg-color-inverted"]};
- color: ${({ theme }) =>
-  theme.colors["text-color-inverted"]};
+ height: 100%;
+ margin: 0 auto;
+ padding: 12px;
+ box-sizing: border-box;
+ @media (max-width: 1600px) {
+  max-width: 1400px;
+ }
+ @media (max-width: 1400px) {
+  max-width: 1200px;
+ }
 `;

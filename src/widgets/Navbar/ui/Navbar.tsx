@@ -1,9 +1,15 @@
+import { Button } from "@/shared/ui/Button/Button";
 import styled from "styled-components";
 
 interface NavbarProps {}
 
 export const Navbar = (props: NavbarProps) => {
- return <StyledNavbar>Navbar</StyledNavbar>;
+ return (
+  <StyledNavbar>
+   <div>NavbarLogo</div>
+   <Button>Login</Button>
+  </StyledNavbar>
+ );
 };
 const StyledNavbar = styled.div`
  max-width: 1600px;
@@ -11,7 +17,9 @@ const StyledNavbar = styled.div`
  height: 100%;
  margin: 0 auto;
  padding: 12px;
- box-sizing: border-box;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
  @media (max-width: 1600px) {
   max-width: 1400px;
  }
