@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import styled, { css } from "styled-components";
 type CardPadding = "0" | "8" | "12" | "16" | "20" | "24";
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
  children?: ReactNode;
  className?: string;
  padding?: CardPadding;

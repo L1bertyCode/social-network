@@ -1,13 +1,25 @@
+import { LoginModal } from "@/feature/authByUsername";
 import { Button } from "@/shared/ui/Button/Button";
+import { useState } from "react";
 import styled from "styled-components";
 
 interface NavbarProps {}
 
 export const Navbar = (props: NavbarProps) => {
+ const [isAuthModal, setIsAuthModal] =
+  useState<boolean>(false);
  return (
   <StyledNavbar>
    <div>NavbarLogo</div>
-   <Button>Login</Button>
+   <Button onClick={() => setIsAuthModal(true)}>
+    Login
+   </Button>
+   {isAuthModal && (
+    <LoginModal
+     isOpen={isAuthModal}
+     onClose={() => setIsAuthModal(false)}
+    />
+   )}
   </StyledNavbar>
  );
 };

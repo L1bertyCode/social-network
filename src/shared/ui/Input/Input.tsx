@@ -13,6 +13,7 @@ interface InputProps extends ExtendsInputType {
  className?: string;
  type?: string;
  placeholder?: string;
+ label?: string;
 }
 
 export const Input = ({
@@ -21,10 +22,13 @@ export const Input = ({
  className,
  value,
  onChange,
+ label,
 }: InputProps) => {
  return (
   <InputWrapper>
+   {label && <label htmlFor={label}>{label}</label>}
    <StyledInput
+    id={label}
     value={value}
     onChange={(e: ChangeEvent<HTMLInputElement>) =>
      onChange?.(e.target.value)
@@ -44,6 +48,10 @@ export const Input = ({
 const InputWrapper = styled.div`
  position: relative;
  width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 12px;
 `;
 const InputButton = styled(Button)`
  position: absolute;

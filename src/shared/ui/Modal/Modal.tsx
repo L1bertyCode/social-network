@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 import styled from "styled-components";
 import { Card } from "@/shared/ui/Card/Card";
 import { Button } from "@/shared/ui/Button/Button";
@@ -9,19 +9,27 @@ interface ModalProps {
  onClose?: () => void;
 }
 
-export const Modal = ({ children }: ModalProps) => {
+export const Modal = ({
+ children,
+ onClose,
+}: ModalProps) => {
+ const onContentClick = (e: MouseEvent) =>
+  e.stopPropagation();
  return (
-  <StyledModal>
-   <Content>
-    {children}<CloseBtn>x</CloseBtn>
+  <StyledModal onClick={onClose}>
+   <Content onClick={onContentClick}>
+    {children}
+    <CloseBtn onClick={onClose}>x</CloseBtn>
    </Content>
   </StyledModal>
  );
 };
 const StyledModal = styled.div<ModalProps>`
  position: fixed;
- width: 100%;
- height: 100vh;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ left: 0;
  background-color: #ffffff90;
  display: flex;
  justify-content: center;
@@ -30,6 +38,12 @@ const StyledModal = styled.div<ModalProps>`
 `;
 const Content = styled(Card)`
  position: relative;
+ min-width: 360px;
+ width: 20%;
+ height: 20vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 `;
 const CloseBtn = styled(Button)`
  position: absolute;
