@@ -12,7 +12,7 @@ export const AddPost = (props: AddPostProps) => {
  const dispatch = useAppDispatch();
  const [value, setPost] = useState<string>("");
  const onChangeInput = (value: string) => setPost(value);
- const createNewPost = () => {
+ const createNewPost = (keyCode?: string) => {
   const newPost: PostSchema = {
    id: String(new Date()),
    firstname: "Lib",
@@ -23,14 +23,19 @@ export const AddPost = (props: AddPostProps) => {
   };
   if (value) {
    dispatch(addPostActions.setPost(newPost));
+   setPost("");
+  } else if (value && keyCode === "Enter") {
+   dispatch(addPostActions.setPost(newPost));
+   setPost("");
   }
-  setPost("");
  };
  return (
   <StyledAddPost>
    <Input
     value={value}
     onChange={onChangeInput}
+
+    // onKeyDown={createNewPost}
     placeholder={"What's news?"}
    />
    <Button onClick={createNewPost} variant="filled">

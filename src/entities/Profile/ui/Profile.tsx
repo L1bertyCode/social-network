@@ -8,6 +8,10 @@ import bg from "@/shared/assets/img/bg.jpg";
 import { useSelector } from "react-redux";
 import { getPostList } from "@/feature/addPost";
 import { getProfile } from "../model/selectors/getProfile";
+import { useState } from "react";
+import { Input } from "@/shared/ui/Input/Input";
+import { useAppDispatch } from "@/app/providers/StoreProvider/config/store";
+import { profileActions } from "../model/slice/profileSlice";
 
 interface ProfileProps {
  className?: string;
@@ -15,9 +19,12 @@ interface ProfileProps {
 
 const avaSizeLeftPadding = "150px";
 export const Profile = ({ className }: ProfileProps) => {
+ const dispatch = useAppDispatch();
  const { firstname, sirname, avatar } =
   useSelector(getProfile);
-
+ const [isChange, setIsChange] = useState<boolean>(false);
+ const [isFirstname, setIsFirstname] = useState(firstname);
+ const [isSirname, setIsSirname] = useState(sirname);
  return (
   <ProfileCard padding="0" className={className}>
    <ProfileCardWrapper>
@@ -34,12 +41,47 @@ export const Profile = ({ className }: ProfileProps) => {
        />
       )}
      </Ava>
-
-     <Name>
-      {firstname} {sirname}
-     </Name>
+     {!isChange ? (
+      <Name>
+       {isFirstname} {isSirname}
+      </Name>
+     ) : (
+      <Name>
+       <Input
+        value={isFirstname}
+        onChange={(value: string) => setIsFirstname(value)}
+       />
+       <Input
+        value={isSirname}
+        onChange={(value: string) => setIsSirname(value)}
+       />
+      </Name>
+     )}
     </ProfileUser>
-    <Button variant="filled">Edit</Button>
+
+    {!isChange ? (
+     <Button
+      onClick={() => setIsChange(true)}
+      variant="filled"
+     >
+      Edit
+     </Button>
+    ) : (
+     <Button
+      onClick={() => {
+       setIsChange(false);
+       dispatch(
+        profileActions.changeProfile({
+         firstname: isFirstname,
+         sirname: isSirname,
+        })
+       );
+      }}
+      variant="filled"
+     >
+      Save
+     </Button>
+    )}
    </ProfileCardWrapper>
   </ProfileCard>
  );
@@ -60,6 +102,8 @@ const Ava = styled.div`
 const Name = styled.div`
  margin-left: ${({ theme }) => theme.indents.indent8};
  padding-left: ${avaSizeLeftPadding};
+ display: flex;
+ gap: 12px;
 `;
 const ProfileCard = styled(Card)`
  height: 400px;

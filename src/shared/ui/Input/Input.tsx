@@ -1,10 +1,14 @@
-import { ChangeEvent, InputHTMLAttributes } from "react";
+import {
+ ChangeEvent,
+ InputHTMLAttributes,
+ KeyboardEvent,
+} from "react";
 import styled from "styled-components";
 import { Button } from "../Button/Button";
 
 type ExtendsInputType = Omit<
  InputHTMLAttributes<HTMLInputElement>,
- "value" | "onChange"
+ "value" | "onChange" | "onKeyDown"
 >;
 
 interface InputProps extends ExtendsInputType {
@@ -14,6 +18,7 @@ interface InputProps extends ExtendsInputType {
  type?: string;
  placeholder?: string;
  label?: string;
+ //  onKeyDown?: (key: string) => void;
 }
 
 export const Input = ({
@@ -22,12 +27,19 @@ export const Input = ({
  className,
  value,
  onChange,
+ //  onKeyDown,
  label,
+ ...otherProps
 }: InputProps) => {
  return (
   <InputWrapper>
    {label && <label htmlFor={label}>{label}</label>}
    <StyledInput
+    {...otherProps}
+    // onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+    //   console.log("e.code", e.key);
+    //    onKeyDown?.(e.code);
+    // }}
     id={label}
     value={value}
     onChange={(e: ChangeEvent<HTMLInputElement>) =>
