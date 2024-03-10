@@ -1,6 +1,7 @@
 import { profileReducer } from "@/entities/Profile";
 import { addMessageReducer } from "@/feature/addMessage";
 import { addPostReducer } from "@/feature/addPost/model/slices/addPostSlice";
+import { authByUsernameReducer } from "@/feature/authByUsername";
 import { configureStore } from "@reduxjs/toolkit";
 import {
  TypedUseSelectorHook,
@@ -13,6 +14,7 @@ export const store = configureStore({
   addMessage: addMessageReducer,
   addPost: addPostReducer,
   profile: profileReducer,
+  authByUsername: authByUsernameReducer,
  },
 });
 

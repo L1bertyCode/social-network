@@ -30,7 +30,8 @@ const StyledModal = styled.div<ModalProps>`
  bottom: 0;
  right: 0;
  left: 0;
- background-color: #ffffff90;
+ background: ${({ theme }) =>
+  `${theme.colors["bg-color-inverted"]}95`};
  display: flex;
  justify-content: center;
  align-items: center;
@@ -40,7 +41,7 @@ const Content = styled(Card)`
  position: relative;
  min-width: 360px;
  width: 20%;
- height: 20vh;
+ height: 30vh;
  display: flex;
  align-items: center;
  justify-content: center;

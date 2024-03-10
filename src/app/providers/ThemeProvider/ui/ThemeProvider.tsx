@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useState } from "react";
 
 import { blueTheme } from "@/app/styles/theme/blueTheme";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { lightTheme } from "@/app/styles/theme/lightTheme";
 import { variables } from "@/app/styles/variables";
 import { darkTheme } from "@/app/styles/theme/darkTheme";
@@ -33,12 +33,8 @@ const defaultTheme =
  (localStorage.getItem(
   LOCAL_STORAGE_THEME_KEY
  ) as ETheme) || ETheme.DARK;
-console.log(
- "defaultTheme",
- localStorage.getItem(LOCAL_STORAGE_THEME_KEY)
-);
 
-export const StyledThemeProvider = ({
+export const ThemeProvider = ({
  children,
 }: ThemeProviderProps) => {
  const [theme, setTheme] = useState(defaultTheme);
@@ -48,10 +44,10 @@ export const StyledThemeProvider = ({
   ...variables,
  };
  return (
-  <ThemeProvider theme={styles}>
+  <StyledThemeProvider theme={styles}>
    <ThemeContext.Provider value={{ theme, setTheme }}>
     {children}
    </ThemeContext.Provider>
-  </ThemeProvider>
+  </StyledThemeProvider>
  );
 };

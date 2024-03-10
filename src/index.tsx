@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { App } from "@/app/App";
-import { StyledThemeProvider } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
+import { ThemeProvider } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
 import GlobalStyles from "@/app/styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
 import { StoreProvider } from "./app/providers/StoreProvider";
@@ -12,14 +12,15 @@ if (!container) {
  );
 }
 
+
 const root = createRoot(container);
 root.render(
  <BrowserRouter>
   <StoreProvider>
-   <StyledThemeProvider>
+   <ThemeProvider>
     <App />
     <GlobalStyles />
-   </StyledThemeProvider>
+   </ThemeProvider>
   </StoreProvider>
  </BrowserRouter>
 );
